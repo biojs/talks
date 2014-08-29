@@ -100,15 +100,14 @@
 				});
 				var hpa = new Biojs.HpaSummaryFeatures({
 					  target: 'hpa_div',
-					  hpaDasUrlOld: 'http://das.proteinatlas.org/das/proteinatlas/features?segment=A1KZ92',
+					  hpaDasUrl: 'http://das.proteinatlas.org/das/proteinatlas/features?segment=A1KZ92',
 					  width: '585px',
 					  imageWidth: '150px',
-					  proxyUrl: "http://www.corsproxy.com/"
+					  proxyUrl:""
 				});
 				var myPainter = new Biojs.DasProteinFeatureViewer({
 				   target: "das_div",
-				   segment: "A1KZ92",
-				   proxyUrl: "http://www.corsproxy.com/"
+				   segment: "A1KZ92"
 				}); 
 				var interactions = new Biojs.InteractionsD3({
 					target: "interactions",
