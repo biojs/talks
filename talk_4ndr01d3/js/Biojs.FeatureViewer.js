@@ -700,7 +700,6 @@ Biojs.FeatureViewer = Biojs.extend(
             } else if (this.opt.showSlider) {
                 painter_div.append(this._withSliderOnly(config.sizeX));
             }
-            painter_div.append('<br/>');
             painter_div.append('<div id="uniprotFeaturePainter-holder"></div>');
 
             var holder = this._getHolder();

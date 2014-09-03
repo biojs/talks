@@ -53,9 +53,8 @@
 		<script language="JavaScript" type="text/javascript" src="js/Biojs.DNAContentViewer.js"></script>
 		<link rel="stylesheet" href="css/biojs.DNAContentViewer.css" />
 
-		<!-- DAS feature viewer -->
+		<!-- Feature viewer -->
 		<script language="JavaScript" type="text/javascript" src="js/Biojs.FeatureViewer.js"></script>
-		<script language="JavaScript" type="text/javascript" src="js/Biojs.DasProteinFeatureViewer.js"></script>
 		<script language="JavaScript" type="text/javascript" src="js/jquery/jquery.tooltip.js"></script>
 		<script language="JavaScript" type="text/javascript" src="js/raphael-2.1.2.js"></script>
 		<script language="JavaScript" type="text/javascript" src="js/canvg.js"></script>
@@ -105,10 +104,12 @@
 					  imageWidth: '150px',
 					  proxyUrl:""
 				});
-				var myPainter = new Biojs.DasProteinFeatureViewer({
-				   target: "das_div",
-				   segment: "A1KZ92"
-				}); 
+				$.getJSON( "features_a4_human.json", function( json ) {
+					var myPainter = new Biojs.FeatureViewer({
+						target: "das_div",
+						json: json
+					});
+				});
 				var interactions = new Biojs.InteractionsD3({
 					target: "interactions",
 					width: "800",
@@ -454,11 +455,12 @@ var gc_content = new Biojs.DNAContentViewer({
 					</header>
 					<section class="middle" style="vertical-align: top; ">  
 						<div id="das_div" class="biojs_component"></div>
-						<pre class="prettyprint" style="margin:20px; padding:10px;">
-var myPainter = new Biojs.DasProteinFeatureViewer({
-   target: "das_div",
-   segment: "A1KZ92"
-});						</pre>
+						<pre class="prettyprint" style="margin:45px; padding:10px;">
+$.getJSON( "features_a4_human.json", function( json ) {
+	var myPainter = new Biojs.FeatureViewer({
+		target: "das_div", json: json
+	});
+});</pre>
 					</section> 
 					<footer class="biojs_footer">
 						<div class="biojs_logo"><img src="images/biojs.png"></img><br/>an open source standard for biological visualisation</div>

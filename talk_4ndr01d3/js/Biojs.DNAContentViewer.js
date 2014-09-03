@@ -525,8 +525,8 @@ Biojs.DNAContentViewer = Biojs.extend(
          */
         _paintDNAContentGraph: function (withoutZoom, start, end) {
             var self = this;
-            var left = "50px";
-            var top = "0px";
+            var left = "-100";
+            var top = "0";
             var filtered_track = this.track_bins;
 
             // filter data if start and end positions are defined
@@ -774,8 +774,8 @@ Biojs.DNAContentViewer = Biojs.extend(
          * @ignore
          */
         _paintMarkersGraph: function () {
-            var left = "50px";
-            var top = "0px";
+            var left = "-100";
+            var top = "0";
             var height = this.height;
             var width = this.width;
             var max = 100
